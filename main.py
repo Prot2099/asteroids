@@ -1,6 +1,7 @@
 # this allows us to use code from
 # the open-source pygame library
 # throughout this file
+import sys
 import pygame
 from constants import *
 from player import Player
@@ -44,6 +45,12 @@ def main():
         #player.draw(screen)
         for obj in drawable:
             obj.draw(screen)
+
+        for obj in asteroids:
+            if obj.collision(player):
+                print("Game Over")
+                sys.exit()
+                
 
         pygame.display.flip()
 
