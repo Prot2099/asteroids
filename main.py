@@ -39,7 +39,7 @@ def main():
 
         
         #player.update(dt)
-        for obj in updatable:
+        for obj in updatable:  
             obj.update(dt)
 
         #player.draw(screen)
@@ -53,7 +53,7 @@ def main():
             for shot in shots:
                 if obj.collision(shot):
                     shot.kill()
-                    obj.kill()
+                    obj.split()
                     
         
                 
